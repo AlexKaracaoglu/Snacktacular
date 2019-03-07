@@ -9,6 +9,7 @@
 import UIKit
 import GooglePlaces
 import MapKit
+import Contacts
 
 class SpotDetailViewController: UIViewController {
     
@@ -20,7 +21,10 @@ class SpotDetailViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     var spot: Spot!
-    let regionDistance: CLLocationDistance = 750
+    
+    var regionDistance: CLLocationDistance = 750
+    var locationManager: CLLocationManager!
+    var currentLocation: CLLocation!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,7 @@ class SpotDetailViewController: UIViewController {
         
         if spot == nil {
             spot = Spot()
+            getLocation()
         }
         
         let region = MKCoordinateRegion(center: spot.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
@@ -64,6 +69,8 @@ class SpotDetailViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        spot.name = nameField.text!
+        spot.address = addressField.text!
         spot.saveData { success in
             if success {
                 self.leaveViewController()
@@ -115,4 +122,61 @@ extension SpotDetailViewController: GMSAutocompleteViewControllerDelegate {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
+}
+
+extension SpotDetailViewController: CLLocationManagerDelegate {
+    
+    func getLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+    }
+    
+    func handleLocationAuthorizstionStatus(status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .authorizedWhenInUse, .authorizedAlways:
+            locationManager.requestLocation()
+        case .denied:
+            print("access denied")
+        case .restricted:
+            print("access denied")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        handleLocationAuthorizstionStatus(status: status)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard spot.name == "" else {
+            return
+        }
+        let geoCoder = CLGeocoder()
+        var name = ""
+        var address = ""
+        currentLocation = locations.last
+        spot.coordinate = currentLocation.coordinate
+        geoCoder.reverseGeocodeLocation(currentLocation, completionHandler: {
+            placemarks, error in
+            if placemarks != nil {
+                let placemark = placemarks?.last
+                name = placemark?.name ?? "name unknown"
+                // import Contacts to use this code:
+                if let postalAddress = placemark?.postalAddress {
+                    address = CNPostalAddressFormatter.string(from: postalAddress, style: .mailingAddress)
+                }
+            }
+            else {
+                print("ERROR RETRIEVING PLACE")
+            }
+            self.spot.name = name
+            self.spot.address = address
+            self.updateUserInterface()
+        })
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to get location")
+    }
 }
