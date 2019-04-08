@@ -19,7 +19,7 @@
 		6A319BA75CD2323888B4CE40 /* Pods_Snacktacular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C60F246ADDBFC31674C38AA /* Pods_Snacktacular.framework */; };
 		BF5F23AD222F6A9D006EEE33 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5F23AC222F6A9D006EEE33 /* Spot.swift */; };
 		BF5F23B1222F6B8D006EEE33 /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5F23B0222F6B8D006EEE33 /* Spots.swift */; };
-		BF9AD6B6225BD1F9002E0CA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF9AD6B5225BD1F9002E0CA9 /* GoogleService-Info.plist */; };
+		BF9AD6BC225BD50D002E0CA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF9AD6BB225BD50D002E0CA9 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +38,7 @@
 		9C60F246ADDBFC31674C38AA /* Pods_Snacktacular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snacktacular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5F23AC222F6A9D006EEE33 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		BF5F23B0222F6B8D006EEE33 /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
-		BF9AD6B5225BD1F9002E0CA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF9AD6BB225BD50D002E0CA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FF806A20F00994AC23A708F5 /* Pods-Snacktacular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.release.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +95,7 @@
 				3E8390E6206597F600512DEA /* Assets.xcassets */,
 				3E8390E8206597F600512DEA /* LaunchScreen.storyboard */,
 				3E8390EB206597F600512DEA /* Info.plist */,
-				BF9AD6B5225BD1F9002E0CA9 /* GoogleService-Info.plist */,
+				BF9AD6BB225BD50D002E0CA9 /* GoogleService-Info.plist */,
 			);
 			path = Snacktacular;
 			sourceTree = "<group>";
@@ -172,7 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E8390EA206597F600512DEA /* LaunchScreen.storyboard in Resources */,
-				BF9AD6B6225BD1F9002E0CA9 /* GoogleService-Info.plist in Resources */,
+				BF9AD6BC225BD50D002E0CA9 /* GoogleService-Info.plist in Resources */,
 				3E8390E7206597F600512DEA /* Assets.xcassets in Resources */,
 				3E8390E5206597F600512DEA /* Main.storyboard in Resources */,
 			);
