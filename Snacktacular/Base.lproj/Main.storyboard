@@ -684,7 +684,11 @@
                                 <action selector="cancelButtonPressed:" destination="6UX-35-Rxb" id="dfz-w3-T9C"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="sSm-qF-uPm"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="sSm-qF-uPm">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="6UX-35-Rxb" id="ZEQ-ON-fJp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
