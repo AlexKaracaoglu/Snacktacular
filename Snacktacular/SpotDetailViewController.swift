@@ -31,6 +31,7 @@ class SpotDetailViewController: UIViewController {
     var regionDistance: CLLocationDistance = 750
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation!
+    var imagepicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class SpotDetailViewController: UIViewController {
         tableView.dataSource = self
         collectionView.delegate = self
         collectionView.dataSource = self
+        imagepicker.delegate = self
         
         if spot == nil {
             spot = Spot()
@@ -121,8 +123,12 @@ class SpotDetailViewController: UIViewController {
     
     func cameraOrLibraryAlert() {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: nil)
-        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default, handler: nil)
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) {_ in
+            self.accessCamera()
+        }
+        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) {_ in
+            self.accessLibrary()
+        }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertController.addAction(cameraAction)
         alertController.addAction(photoLibraryAction)
@@ -286,6 +292,35 @@ extension SpotDetailViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.photo = photos.photoArray[indexPath.row]
         return cell
     }
+}
+
+extension SpotDetailViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let photo = Photo()
+        photo.image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        photos.photoArray.append(photo)
+        dismiss(animated: true) {
+            self.collectionView.reloadData()
+        }
+    }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func accessLibrary() {
+        imagepicker.sourceType = .photoLibrary
+        present(imagepicker, animated: true, completion: nil)
+    }
+    
+    func accessCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagepicker.sourceType = .camera
+            present(imagepicker, animated: true, completion: nil)
+        }
+        else {
+            print("no camera :/")
+        }
+    }
 }

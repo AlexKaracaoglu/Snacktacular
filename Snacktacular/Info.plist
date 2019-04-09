@@ -60,5 +60,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>Snacktacular will need access to your camera to post photos.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Snacktacular will need access to your photo library to post library images.</string>
 </dict>
 </plist>
