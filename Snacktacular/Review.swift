@@ -14,14 +14,14 @@ class Review {
     var text: String
     var rating: Int
     var reviewerUserId: String
-    var date: Date
+    var date: TimeInterval
     var documentID: String
     
     var dictionary: [String: Any] {
         return ["title": title, "text": text, "rating": rating, "reviewerUserId": reviewerUserId, "date": date, "documentID": documentID]
     }
     
-    init(title: String, text: String, rating: Int, reviewerUserId: String, date: Date, documentID: String) {
+    init(title: String, text: String, rating: Int, reviewerUserId: String, date: TimeInterval, documentID: String) {
         self.title = title
         self.text = text
         self.rating = rating
@@ -30,9 +30,18 @@ class Review {
         self.documentID = documentID
     }
     
+    convenience init(dictionary: [String: Any]) {
+        let title = dictionary["title"] as! String? ?? ""
+        let text = dictionary["text"] as! String? ?? ""
+        let rating = dictionary["rating"] as! Int? ?? 0
+        let reviewerUserId = dictionary["reviewerUserId"] as! String? ?? ""
+        let date = dictionary["date"] as! TimeInterval? ?? TimeInterval()
+        self.init(title: title, text: text, rating: rating, reviewerUserId: reviewerUserId, date: date, documentID: "")
+    }
+    
     convenience init() {
         let currentUserId = Auth.auth().currentUser?.email ?? "Unknown user"
-        self.init(title: "", text: "", rating: 0, reviewerUserId: currentUserId, date: Date(), documentID: "")
+        self.init(title: "", text: "", rating: 0, reviewerUserId: currentUserId, date: TimeInterval(), documentID: "")
     }
     
     func saveData(spot: Spot, completed: @escaping (Bool) -> ()) {

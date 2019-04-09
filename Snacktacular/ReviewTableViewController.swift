@@ -52,6 +52,12 @@ class ReviewTableViewController: UITableViewController {
         if review == nil {
             review = Review()
         }
+        else {
+            postedByLabel.text = review.reviewerUserId
+            reviewTitle.text = review.title
+            reviewView.text = review.text
+            rating = review.rating
+        }
     }
     
     func leaveViewController() {
