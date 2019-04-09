@@ -22,6 +22,7 @@
 		BF9AD6BC225BD50D002E0CA9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF9AD6BB225BD50D002E0CA9 /* GoogleService-Info.plist */; };
 		BF9AD6E6225C2D8C002E0CA9 /* Double+roundTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9AD6E5225C2D8C002E0CA9 /* Double+roundTo.swift */; };
 		BF9AD6E8225C2F3A002E0CA9 /* UIView+addBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9AD6E7225C2F3A002E0CA9 /* UIView+addBorder.swift */; };
+		BF9AD6EA225C3979002E0CA9 /* ReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9AD6E9225C3979002E0CA9 /* ReviewTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		BF9AD6BB225BD50D002E0CA9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF9AD6E5225C2D8C002E0CA9 /* Double+roundTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+roundTo.swift"; sourceTree = "<group>"; };
 		BF9AD6E7225C2F3A002E0CA9 /* UIView+addBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBorder.swift"; sourceTree = "<group>"; };
+		BF9AD6E9225C3979002E0CA9 /* ReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewController.swift; sourceTree = "<group>"; };
 		FF806A20F00994AC23A708F5 /* Pods-Snacktacular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snacktacular.release.xcconfig"; path = "Target Support Files/Pods-Snacktacular/Pods-Snacktacular.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 				3E0F960B2065A17500AE450D /* SpotDetailViewController.swift */,
 				3E0F960D2065AB6400AE450D /* SpotReviewsTableViewCell.swift */,
 				3E0F960F2065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift */,
+				BF9AD6E9225C3979002E0CA9 /* ReviewTableViewController.swift */,
 				BF9AD6E5225C2D8C002E0CA9 /* Double+roundTo.swift */,
 				BF9AD6E7225C2F3A002E0CA9 /* UIView+addBorder.swift */,
 				3E8390E3206597F600512DEA /* Main.storyboard */,
@@ -314,6 +317,7 @@
 				3E0F96102065AC1A00AE450D /* SpotPhotosCollectionViewCell.swift in Sources */,
 				3E0F960C2065A17500AE450D /* SpotDetailViewController.swift in Sources */,
 				3E0F960E2065AB6400AE450D /* SpotReviewsTableViewCell.swift in Sources */,
+				BF9AD6EA225C3979002E0CA9 /* ReviewTableViewController.swift in Sources */,
 				BF9AD6E8225C2F3A002E0CA9 /* UIView+addBorder.swift in Sources */,
 				3E0F960A20659D9000AE450D /* SpotsTableViewCell.swift in Sources */,
 				BF5F23AD222F6A9D006EEE33 /* Spot.swift in Sources */,
