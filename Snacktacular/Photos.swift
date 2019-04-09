@@ -16,4 +16,5 @@ class Photos {
     init() {
         db = Firestore.firestore()
     }
+    
 }

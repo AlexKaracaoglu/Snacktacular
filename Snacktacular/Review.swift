@@ -35,7 +35,8 @@ class Review {
         let text = dictionary["text"] as! String? ?? ""
         let rating = dictionary["rating"] as! Int? ?? 0
         let reviewerUserId = dictionary["reviewerUserId"] as! String? ?? ""
-        let date = dictionary["date"] as! TimeInterval? ?? TimeInterval()
+        let date = TimeInterval()
+//        let date = dictionary["date"] as! TimeInterval? ?? TimeInterval()
         self.init(title: title, text: text, rating: rating, reviewerUserId: reviewerUserId, date: date, documentID: "")
     }
     
