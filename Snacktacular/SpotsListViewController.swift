@@ -34,10 +34,10 @@ class SpotsListViewController: UIViewController {
         tableView.isHidden = true
         
         spots = Spots()
+        getLocation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getLocation()
         navigationController?.setToolbarHidden(false, animated: true)
         spots.loadData {
             self.sortBasedOnSegmentPressed()
