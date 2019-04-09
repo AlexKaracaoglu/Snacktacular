@@ -485,26 +485,41 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="36.666666666666664" height="40"/>
                                                             <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Button" image="star-empty"/>
+                                                            <connections>
+                                                                <action selector="starButtonPressed:" destination="6UX-35-Rxb" eventType="touchUpInside" id="UTy-Rh-9VT"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN8-Fp-ErW">
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SN8-Fp-ErW">
                                                             <rect key="frame" x="44.666666666666657" y="0.0" width="36.666666666666657" height="40"/>
                                                             <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Button" image="star-empty"/>
+                                                            <connections>
+                                                                <action selector="starButtonPressed:" destination="6UX-35-Rxb" eventType="touchUpInside" id="2Lm-5T-NLJ"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oW-LU-Ecm">
+                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oW-LU-Ecm">
                                                             <rect key="frame" x="89.333333333333329" y="0.0" width="37" height="40"/>
                                                             <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Button" image="star-empty"/>
+                                                            <connections>
+                                                                <action selector="starButtonPressed:" destination="6UX-35-Rxb" eventType="touchUpInside" id="IZP-rI-ID5"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy0-Z6-BAS">
+                                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy0-Z6-BAS">
                                                             <rect key="frame" x="134.33333333333331" y="0.0" width="36.666666666666657" height="40"/>
                                                             <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Button" image="star-empty"/>
+                                                            <connections>
+                                                                <action selector="starButtonPressed:" destination="6UX-35-Rxb" eventType="touchUpInside" id="7BF-2V-miB"/>
+                                                            </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZy-Iq-YEP">
+                                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZy-Iq-YEP">
                                                             <rect key="frame" x="179" y="0.0" width="37" height="40"/>
                                                             <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <state key="normal" title="Button" image="star-empty"/>
+                                                            <connections>
+                                                                <action selector="starButtonPressed:" destination="6UX-35-Rxb" eventType="touchUpInside" id="tNM-vJ-ybt"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -683,6 +698,11 @@
                         <outlet property="reviewTitle" destination="C6i-vr-2WY" id="3S2-Fz-pIN"/>
                         <outlet property="reviewView" destination="YHf-zb-mB0" id="Dq1-Je-iu9"/>
                         <outlet property="saveBarButton" destination="sSm-qF-uPm" id="zh1-h6-hXR"/>
+                        <outletCollection property="starButtonCollection" destination="CK7-zV-HIV" collectionClass="NSMutableArray" id="eCA-Vf-oa0"/>
+                        <outletCollection property="starButtonCollection" destination="SN8-Fp-ErW" collectionClass="NSMutableArray" id="LWe-TK-JtE"/>
+                        <outletCollection property="starButtonCollection" destination="9oW-LU-Ecm" collectionClass="NSMutableArray" id="NM6-p0-kgr"/>
+                        <outletCollection property="starButtonCollection" destination="sy0-Z6-BAS" collectionClass="NSMutableArray" id="v21-N6-ddc"/>
+                        <outletCollection property="starButtonCollection" destination="wZy-Iq-YEP" collectionClass="NSMutableArray" id="aPN-ib-zCD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mft-15-0ml" userLabel="First Responder" sceneMemberID="firstResponder"/>

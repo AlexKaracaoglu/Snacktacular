@@ -10,6 +10,8 @@ import UIKit
 
 class ReviewTableViewController: UITableViewController {
 
+    @IBOutlet var starButtonCollection: [UIButton]!
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var postedByLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -21,6 +23,14 @@ class ReviewTableViewController: UITableViewController {
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     @IBOutlet weak var deleteButton: UIButton!
     
+    var rating = 0 {
+        didSet {
+            for starButton in starButtonCollection {
+                let image = UIImage(named: (starButton.tag < rating ? "star-filled": "star-empty"))
+                starButton.setImage(image, for: .normal)
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,5 +58,10 @@ class ReviewTableViewController: UITableViewController {
     }
     @IBAction func deleteButtonPressed(_ sender: Any) {
     }
+    
+    @IBAction func starButtonPressed(_ sender: UIButton) {
+        rating = sender.tag + 1
+    }
+    
     
 }
