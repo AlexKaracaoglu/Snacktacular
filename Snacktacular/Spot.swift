@@ -98,6 +98,7 @@ class Spot: NSObject, MKAnnotation {
                     completed(false)
                 }
                 else {
+                    self.documentID = ref!.documentID
                     completed(true)
                 }
             }
