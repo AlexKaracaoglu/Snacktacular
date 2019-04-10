@@ -18,7 +18,7 @@ class Review {
     var documentID: String
     
     var dictionary: [String: Any] {
-        return ["title": title, "text": text, "rating": rating, "reviewerUserId": reviewerUserId, "date": date, "documentID": documentID]
+        return ["title": title, "text": text, "rating": rating, "reviewerUserId": reviewerUserId, "date": date]
     }
     
     init(title: String, text: String, rating: Int, reviewerUserId: String, date: TimeInterval, documentID: String) {
@@ -53,7 +53,9 @@ class Review {
                 completed(false)
             }
             else {
-                completed(true)
+                spot.updateAverageRating {
+                    completed(true)
+                }
             }
         }
     }
@@ -69,7 +71,9 @@ class Review {
                     completed(false)
                 }
                 else {
-                    completed(true)
+                    spot.updateAverageRating {
+                        completed(true)
+                    }
                 }
             }
         }
@@ -81,7 +85,9 @@ class Review {
                     completed(false)
                 }
                 else {
-                    completed(true)
+                    spot.updateAverageRating {
+                        completed(true)
+                    }
                 }
             }
         }

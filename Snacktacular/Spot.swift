@@ -70,6 +70,35 @@ class Spot: NSObject, MKAnnotation {
         self.init(name: name, address: address, coordinate: coordinate, averageRating: averageRating, numberOfReviews: numberOfReviews, postingUserID: postingUserID, documentID: "")
     }
     
+    func updateAverageRating(completed: @escaping () -> ()) {
+        let db = Firestore.firestore()
+        let reviewsRef = db.collection("spots").document(self.documentID).collection("reviews")
+        reviewsRef.getDocuments { (querySnapshot, error) in
+            guard error == nil else {
+                print("ERROR")
+                return completed()
+            }
+            var ratingTotal = 0.0
+            for document in querySnapshot!.documents {
+                let rating = document.data()["rating"] as! Int ?? 0
+                ratingTotal = ratingTotal + Double(rating)
+            }
+            self.averageRating = ratingTotal / Double(querySnapshot!.count)
+            self.numberOfReviews = querySnapshot!.count
+            let dataToSave = self.dictionary
+            let spotRef = db.collection("spots").document(self.documentID)
+            spotRef.setData(dataToSave) { (error) in
+                if let error = error {
+                    print("ERROR")
+                    completed()
+                }
+                else {
+                    completed()
+                }
+            }
+        }
+    }
+    
     func saveData(completed: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         guard let postingUserID = (Auth.auth().currentUser?.uid) else {
