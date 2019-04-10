@@ -609,7 +609,7 @@
                                                         <constraint firstAttribute="height" constant="24" id="Knm-6g-RAd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNextCondensed-DemiBold" family="Avenir Next Condensed" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YHf-zb-mB0">
@@ -704,8 +704,8 @@
                         <outlet property="nameLabel" destination="kAj-53-Hg6" id="7HU-vt-00s"/>
                         <outlet property="postedByLabel" destination="3dz-yT-okv" id="Z5c-kp-CEC"/>
                         <outlet property="reviewDateLabel" destination="pN0-MG-FoZ" id="P2p-GB-Oot"/>
-                        <outlet property="reviewTitle" destination="C6i-vr-2WY" id="3S2-Fz-pIN"/>
-                        <outlet property="reviewView" destination="YHf-zb-mB0" id="Dq1-Je-iu9"/>
+                        <outlet property="reviewTextView" destination="YHf-zb-mB0" id="Dq1-Je-iu9"/>
+                        <outlet property="reviewTitleField" destination="C6i-vr-2WY" id="3S2-Fz-pIN"/>
                         <outlet property="saveBarButton" destination="sSm-qF-uPm" id="zh1-h6-hXR"/>
                         <outletCollection property="starButtonCollection" destination="CK7-zV-HIV" collectionClass="NSMutableArray" id="eCA-Vf-oa0"/>
                         <outletCollection property="starButtonCollection" destination="SN8-Fp-ErW" collectionClass="NSMutableArray" id="LWe-TK-JtE"/>
