@@ -45,6 +45,19 @@ class Review {
         self.init(title: "", text: "", rating: 0, reviewerUserId: currentUserId, date: TimeInterval(), documentID: "")
     }
     
+    func deleteData(spot: Spot, completed: @escaping (Bool) -> ()) {
+        let db = Firestore.firestore()
+        db.collection("spots").document(spot.documentID).collection("reviews").document(documentID).delete() { error in
+            if let error = error {
+                print("ERROR")
+                completed(false)
+            }
+            else {
+                completed(true)
+            }
+        }
+    }
+    
     func saveData(spot: Spot, completed: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()
         let dataToSave = self.dictionary

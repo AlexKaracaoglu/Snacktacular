@@ -140,6 +140,14 @@ class ReviewTableViewController: UITableViewController {
         leaveViewController()
     }
     @IBAction func deleteButtonPressed(_ sender: Any) {
+        review.deleteData(spot: spot) { success in
+            if success {
+                self.leaveViewController()
+            }
+            else {
+                print("DELETE FAILED")
+            }
+        }
     }
     
     @IBAction func starButtonPressed(_ sender: UIButton) {
