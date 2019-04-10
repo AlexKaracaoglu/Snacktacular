@@ -15,6 +15,7 @@ class Review {
     var rating: Int
     var reviewerUserId: String
     var date: TimeInterval
+    // Note: Could not get Date to work, would throw an error, so date functionality is non-existant. Just used TimeInterval as a placeholder while trying to figure out the date issue, but couldn't Date to work, so just keeping this
     var documentID: String
     
     var dictionary: [String: Any] {
